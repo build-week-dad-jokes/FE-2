@@ -17,7 +17,6 @@ const Joke = props => {
   }
 
   return (
-    //Semantic UI 'Card' imported as 'Joke'
     <Card key={props.key}>
       <Card.Content>
         <Card.Description>
