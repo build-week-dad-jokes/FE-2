@@ -52,6 +52,8 @@ const FormikSignIn = withFormik({
             localStorage.setItem('token', res.data.payload)
             props.history.push('/protected')
             console.log(res)
+            console.log("props", props)
+            console.log('token')
         })
         .catch(err => console.log(err.response))
     }

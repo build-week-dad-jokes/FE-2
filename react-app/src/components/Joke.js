@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Icon } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+
 
 const Joke = props => {
   const [upVotes, setUpvotes] = useState(0);

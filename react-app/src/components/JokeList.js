@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Joke from "./Joke";
+import Navigation from './Navigation'
 
 const JokeList = () => {
   const [jokes, setJokes] = useState([]);
@@ -17,8 +18,10 @@ const JokeList = () => {
 
   return (
     <>
+    <Navigation/>
       {jokes.map(joke => {
         return (
+          
           <div key={joke.id}>
             <Joke joke={joke} />
           </div>
