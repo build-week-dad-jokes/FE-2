@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Route path='/' component={FormikForm}/>
-      <Route exact path='/signin' component={FormikSignIn}/>
+      <Route exact path='/' component={FormikForm}/>
+      <Route path='/signin' component={FormikSignIn}/>
       </div>
     </Router>
   );

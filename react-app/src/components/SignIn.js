@@ -21,7 +21,7 @@ const SignIn = ({errors, touched, values, handleSubmit, status}) => {
                 {touched.username && errors.username && (
                     <p className="errors">{errors.username}</p>
                 )}
-            <Field type='text' placeholder="password" name='password'/>
+            <Field type='password' placeholder="password" name='password'/>
                 {touched.password && errors.password && (
                     <p className="errors">{errors.password}</p>
                 )}
@@ -47,12 +47,13 @@ const FormikSignIn = withFormik({
 
     handleSubmit(values, props) {
         axios
-        .post('  http://localhost:3300/api/auth/login', values)
+        .post('https://dadjokes-be.herokuapp.com/api/auth/login', values)
         .then(res => {
             localStorage.setItem('token', res.data.payload)
             props.history.push('/protected')
+            console.log(res)
         })
-        .catch(err => console.log(err.res))
+        .catch(err => console.log(err.response))
     }
 })(SignIn)
 
