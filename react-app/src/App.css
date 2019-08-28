@@ -36,3 +36,8 @@ div .ui.card {
     transform: rotate(360deg);
   }
 }
+
+.navlink{
+  text-decoration: none;
+  font: 50px;
+}

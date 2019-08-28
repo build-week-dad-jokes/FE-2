@@ -1,0 +1,31 @@
+.nav {
+    display: flex;
+    border-bottom: 2px solid gray;
+    width: 650px;
+    margin: auto;
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+    
+}
+
+.navlink {
+    justify-content: flex-start;
+    font-size: 1.8rem;
+    padding-right: 6rem;
+    color: black;
+}
+.search {
+    margin-right: 2rem;
+}
+
+.addjoke {
+    padding-right: 4rem;
+    padding-left: 4rem;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.signin_button{
+    font-size: 1.8rem;
+    color: black
+}

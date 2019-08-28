@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {Form, Field, withFormik} from 'formik'
 import * as Yup from 'yup'
+import Navigation from './Navigation'
 
 const SignIn = ({errors, touched, values, handleSubmit, status}) => {
     const [user, setUser] = useState({})
@@ -15,6 +16,7 @@ const SignIn = ({errors, touched, values, handleSubmit, status}) => {
 
     return (
         <>
+        <Navigation/>
         <Form>
         <h1>Welcome Back</h1>
             <Field type='text' placeholder="username" name='username'/>
@@ -25,7 +27,7 @@ const SignIn = ({errors, touched, values, handleSubmit, status}) => {
                 {touched.password && errors.password && (
                     <p className="errors">{errors.password}</p>
                 )}
-            <button type="submit">Sign In</button>
+            <button type="submit"><Link to='/jokes'>Sign In</Link></button>
             <div>Don't have an account?<Link to ='/'></Link></div>
         </Form>
         </>
@@ -49,9 +51,9 @@ const FormikSignIn = withFormik({
         axios
         .post('https://dadjokes-be.herokuapp.com/api/auth/login', values)
         .then(res => {
-            localStorage.setItem('token', res.data.payload)
-            props.history.push('/protected')
-            console.log(res)
+            localStorage.setItem('token', res.data.token)
+            
+            console.log(res.data)
             console.log("props", props)
             console.log('token')
         })

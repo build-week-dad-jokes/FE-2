@@ -5,14 +5,16 @@ import PrivateRoute from './components/PrivateRoute'
 import FormikForm from "./components/SignUp";
 import FormikSignIn from "./components/SignIn";
 import JokeList from "./components/JokeList";
+import AddJoke from './components/AddJoke'
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Route exact path="/" component={FormikForm} />
-        <PrivateRoute exact path="/protected" component={JokeList} />
-        <Route exact path="/signin" component={FormikSignIn} />
+        <Route  path="/jokes" component={JokeList} />
+        <Route  path="/signin" component={FormikSignIn} />
+        <Route path='/addjoke' component={AddJoke}/>
       </div>
     </Router>
   );
