@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Form, Field, withFormik} from 'formik'
 import * as Yup from 'yup'
 import Navigation from './Navigation'
+import {Link} from 'react-router-dom'
 
 const SignUpForm = ({errors, touched, handleSubmit, values, status}) =>    {
 
@@ -33,7 +34,7 @@ return (
                 {touched.confirm && errors.confirm && (
                     <p className='error'>{errors.confirm}</p>
                 )}
-                <button type='submit'>accept and submit</button>
+                <button type='submit'><Link to ="/signin">accept and submit</Link></button>
                 <div>By submitting you accept the terms and conditions</div>
         </Form>
     </>

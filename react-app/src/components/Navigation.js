@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import {Icon} from 'semantic-ui-react'
 import './Navigation.css'
 
 
-const Navigation = () => {
+
+const Navigation = props => {
+
+   
     return (
         <nav className="nav">
             <header>

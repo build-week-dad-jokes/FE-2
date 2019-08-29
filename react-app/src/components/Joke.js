@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { Card, Icon } from "semantic-ui-react";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 
 const Joke = props => {
   const [upVotes, setUpvotes] = useState(0);
   const [joke, setJoke] = useState(props.joke);
+  console.log(props.joke)
 
   function upVote(e) {
     e.preventDefault();
-    setUpvotes(upVotes + 1);
-  }
+    
+    setUpvotes(upVotes + 1)
+          
+    }
+    
+    
+  
 
   function downVote(e) {
     e.preventDefault();
@@ -25,7 +32,7 @@ const Joke = props => {
           <p>{joke.punchline}</p>
           <p>
             <span>
-              <Icon name="arrow up" onClick={e => upVote(e)} />
+              <Icon name="arrow up" onClick={upVote} />
               {upVotes}
             </span>
             <span>
